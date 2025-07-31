@@ -10,7 +10,7 @@ function changeBrightness (factor, sprite) {
   virtCanvas.width = 500
   virtCanvas.height = 500
   const context = virtCanvas.getContext('2d')
-  context.drawImage(sprite, 0, 0, 500, 500);
+  context.drawImage(sprite, 0, 0, 500, 500)
 
   const imgData = context.getImageData(0, 0, 500, 500)
 
@@ -33,7 +33,7 @@ function displayVictoryMess (moves) {
 }
 
 function toggleVisablity (id) {
-  if (document.getElementById(id).style.visibility == 'visible') {
+  if (document.getElementById(id).style.visibility === 'visible') {
     document.getElementById(id).style.visibility = 'hidden'
   } else {
     document.getElementById(id).style.visibility = 'visible'
@@ -99,7 +99,7 @@ function Maze (Width, Height) {
 
   function defineMaze () {
     let isComp = false
-    let move = false;
+    let move = false
     let cellsVisited = 1
     let numLoops = 0
     let maxLoops = 0
@@ -150,7 +150,7 @@ function Maze (Width, Height) {
         //  move the current position back to the prior cell and Recall the method.
         pos = mazeMap[pos.x][pos.y].priorPos
       }
-      if (numCells == cellsVisited) {
+      if (numCells === cellsVisited) {
         isComp = true
       }
     }
@@ -241,11 +241,11 @@ function DrawMaze (Maze, ctx, cellsize, endSprite = null) {
       ctx.lineTo(x + cellSize, y + cellSize)
       ctx.stroke()
     }
-    if (cell.w == false) {
+    if (cell.w === false) {
       ctx.beginPath()
       ctx.moveTo(x, y)
       ctx.lineTo(x, y + cellSize)
-      ctx.stroke();
+      ctx.stroke()
     }
   }
 
@@ -444,7 +444,7 @@ function Player (maze, c, _cellsize, onComplete, sprite = null) {
     $('#view').swipe({
       swipe: function (
         event,
-        direction,
+        direction
         // distance,
         // duration,
         // fingerCount,
