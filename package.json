@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "eslint": "^8.57.1",
+    "gh-pages": "^5.0.0",
+    "jquery": "^3.7.1",
+    "lodash": "^4.17.21",
+    "minimatch": "^9.0.3"
+  },
+  "scripts": {
+    "build": "TMPDIR=.tmp npx parcel build src/index.html --public-url /https://gregoryb79.github.io/CodioCICD_prj",
+    "lint": "npx eslint src/.",
+    "test": "npx jest",
+    "deploy": "npm run build && npx gh-pages -d dist",
+    "ci": "npm run lint && npm run test && npm run deploy"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@parcel/transformer-sass": "^2.15.4",
+    "eslint-config-standard": "^17.1.0",
+    "globals": "^16.3.0",
+    "jest-environment-jsdom": "^29.6.1",
+    "parcel": "^2.15.4"
+  }
+}
